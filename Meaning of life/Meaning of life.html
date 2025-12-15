@@ -2,63 +2,69 @@
 <head>
   <meta charset="UTF-8" />
   <title>Quote Card</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
   <style>
     html, body {
-    background: transparent !important;
-  }
+      margin: 0;
+      padding: 0;
+      font-family: "Handlee", cursive;
+      background: none;
+    }
 
     body {
-      margin: 0;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-family:  "Handlee", cursive;
-      font-weight: 400;
-      font-style: normal;
-      background: rgba(0, 0, 0, 0);
+      align-items: center;
     }
 
     .container {
       position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: transparent;
-    }
+      width: 100%;
+      max-width: 700px;
 
+      /* ✅ THIS is what replaces transparency */
+      background: #111; /* neutral, works in dark & light */
+      border-radius: 14px;
+      overflow: hidden;
+    }
 
     .container::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: url("https://i.pinimg.com/1200x/f1/8c/95/f18c95960101c4b4be9576a92faac70f.jpg") center / cover no-repeat;
+      background: url("https://i.pinimg.com/1200x/f1/8c/95/f18c95960101c4b4be9576a92faac70f.jpg")
+                  center / cover no-repeat;
+      z-index: 0;
     }
 
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(17, 63, 173, 0.5); /* 🔥 control transparency here */
+      background: rgba(17, 63, 173, 0.55);
+      z-index: 1;
     }
 
     .content {
       position: relative;
+      z-index: 2;
       color: white;
-      padding: 20px 25px ;
+      padding: 24px 28px;
       text-align: center;
     }
 
     .quote {
       font-size: 1.8rem;
       line-height: 1.5;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .author {
       font-size: 1.1rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -69,7 +75,8 @@
 
     <div class="content">
       <div class="quote">
-        “The universe is a blank canvas by default, and it’s up to you to paint on it. So give your energy to what matters to you.”
+        “The universe is a blank canvas by default, and it’s up to you to paint on it.
+        So give your energy to what matters to you.”
       </div>
       <div class="author">
         — Me, Windy
