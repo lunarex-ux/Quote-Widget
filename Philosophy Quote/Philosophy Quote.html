@@ -1,61 +1,64 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Quote Card</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
   <style>
     html, body {
-    background: transparent !important;
+      margin: 0;
+      padding: 0;
+      font-family: "Handlee", cursive;
+      background: none;
     }
 
-    
     body {
-      margin: 0;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-family:  "Handlee", cursive;
-      font-weight: 400;
-      font-style: normal;
-      background: rgba(0, 0, 0, 0);
+      align-items: center;
     }
 
     .container {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    background: transparent;
-    }
+      position: relative;
+      width: 100%;
+      max-width: 720px;
 
+      /* ✅ replace transparency with a neutral base */
+      background: #111;
+      border-radius: 14px;
+      overflow: hidden;
+    }
 
     .container::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: url("https://i.pinimg.com/1200x/86/3a/44/863a446fbc44e624c04c78fc05b25e4c.jpg") center / cover no-repeat;
+      background: url("https://i.pinimg.com/1200x/86/3a/44/863a446fbc44e624c04c78fc05b25e4c.jpg")
+                  center / cover no-repeat;
+      z-index: 0;
     }
 
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(17, 63, 173, 0.5); /* 🔥 control transparency here */
+      background: rgba(17, 63, 173, 0.55);
+      z-index: 1;
     }
 
     .content {
       position: relative;
+      z-index: 2;
       color: white;
-      padding: 20px 25px ;
+      padding: 26px 30px;
       text-align: center;
     }
 
     .quote {
       font-size: 1.8rem;
       line-height: 1.5;
-      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -66,7 +69,10 @@
 
     <div class="content">
       <div class="quote">
-        “Don't be a normie, BE A ROGUE!! Don't limit yourself to the normal. Why should you limit yourself when your potential is actually limitless! Always become Greater, always!”
+        “Don't be a normie, BE A ROGUE!!  
+        Don't limit yourself to the normal.  
+        Why should you limit yourself when your potential is actually limitless!  
+        Always become Greater, always!”
       </div>
     </div>
   </div>
