@@ -7,9 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
   
   <style>
+    html, body {
+    background: transparent !important;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,12 +23,12 @@
     }
 
     .container {
-      position: relative;
-      max-width: 700px;
-      max-height: 1000px;
-      border-radius: 12px;
-      overflow: hidden; /* keeps overlay inside rounded corners */
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
     }
+
 
     .container::before {
       content: "";
@@ -76,4 +79,5 @@
   </div>
 </body>
 </html>
+
 
